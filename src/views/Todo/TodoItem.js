@@ -1,7 +1,8 @@
-// import React, { Component } from 'react'   // --1
-import React, { PureComponent } from 'react' // --2
+import React, { Component } from 'react'   // --1
+// import React, { PureComponent } from 'react' // --2
 
-export default class TodoItem extends PureComponent {
+// export default class TodoItem extends PureComponent {
+export default class TodoItem extends Component {  // --1
     handleItemCheck = () => {
         // this.props.handleItemCheck(this.props.id)
         const {
@@ -19,18 +20,18 @@ export default class TodoItem extends PureComponent {
         handleItemDelete(id)
     }
     //用来判断是否需要更新当前组件 --1
-    // shouldComponentUpdate(nextProps,nextState) {
-    //     return nextProps.ok !== this.props.ok
-    // }
+    shouldComponentUpdate(nextProps,nextState) {
+        return nextProps.completed !== this.props.completed
+    }
     render() {
         console.log('render TodoItem')
         return (
             <li>
                 <input type="checkbox" 
-                    checked={this.props.ok} 
+                    checked={this.props.completed} 
                     onChange={this.handleItemCheck}
                 />
-                    <span>{this.props.title} {this.props.ok? "ok":"no"}</span>
+                    <span>{this.props.title} {this.props.completed? "ok":"no"}</span>
                     <span onClick={this.handleDelete}> [ X ]</span>
             </li>
         )

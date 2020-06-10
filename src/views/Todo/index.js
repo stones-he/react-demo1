@@ -1,22 +1,39 @@
 import React, { Component, createRef } from 'react'
 import TodoList from './TodoList'
+import  {getTodos} from '../../services'
 
 export default class Todos extends Component {
     constructor() {
         super()
         this.state = {
-            todoValue:"",
-            todos: [{
-                id: Math.random(),
-                title: "上学",
-                ok: true
-            }, {
-                id: Math.random(),
-                title: "放学",
-                ok: false
-            }]
+            todoValue: "",
+            todos: [],
+            isLoading: false
         }
         this.inputDom = createRef()
+    }
+    componentDidMount() {
+        //
+        this.setState({
+            isLoading: true
+        })
+        //
+        getTodos().then((resp) => {
+            // console.log(resp)
+            if (resp.status === 200) {
+                this.setState({
+                    todos: resp.data
+                })
+            } else {
+                // other http status deal
+            }
+        }).catch((err) => {
+            console.log(err)
+        }).finally(() => {
+            this.setState({
+                isLoading: false
+            })
+        })
     }
     handleInputValue = (e) => {
         this.setState({
@@ -36,7 +53,7 @@ export default class Todos extends Component {
             todos: [...this.state.todos, {
                 id: Math.random(),
                 title: this.state.todoValue,
-                ok: false
+                completed: false
             }],
             todoValue: ""
         }, () => {
@@ -55,7 +72,7 @@ export default class Todos extends Component {
             return {
                 todos: prevState.todos.map((todo) => {
                     if (todo.id === id) {
-                        todo.ok = !todo.ok
+                        todo.completed = !todo.completed
                     }
                     return todo
                 })
@@ -77,12 +94,18 @@ export default class Todos extends Component {
                         ref={this.inputDom}
                     /> <button onClick={this.handleAddBtn}>ADD</button>
                 </div>
-                <TodoList 
-                    title="Task List" 
-                    todos={this.state.todos} 
-                    handleItemCheck={this.handleItemCheck} 
-                    handleItemDelete={this.handleItemDelete} 
-                />
+                {
+                    this.state.isLoading 
+                    ? 
+                    <div>loading...</div>
+                    :
+                    <TodoList 
+                        title="Task List" 
+                        todos={this.state.todos} 
+                        handleItemCheck={this.handleItemCheck} 
+                        handleItemDelete={this.handleItemDelete} 
+                    />
+                }
                 <span />
             </div>
         )

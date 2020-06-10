@@ -12,4 +12,6 @@ npm i @babel/plugin-proposal-decorators -D
 npm i react-router-dom -S
 
 npm i react-loadable -S
+
+npm i axios -S
 ```
