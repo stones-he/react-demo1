@@ -1,4 +1,4 @@
-```
+```shell
 npm i react-app-rewired customize-cra -D
 
 npm i less less-loader
@@ -9,5 +9,7 @@ npm i babel-plugin-import -D
 
 npm i @babel/plugin-proposal-decorators -D
 
+npm i react-router-dom -S
 
+npm i react-loadable -S
 ```
