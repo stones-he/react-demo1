@@ -5,7 +5,8 @@ import {
     Settings,
     ArticalList,
     ArticalEdit,
-    Todos
+    Todos,
+    Counter
 } from '../views'
 
 export const mainRouter = [{
@@ -32,4 +33,7 @@ export const adminRouter = [{
 }, {
     pathname: '/admin/todo',
     component: Todos
+}, {
+    pathname: '/admin/counter',
+    component: Counter
 }]
