@@ -6,7 +6,8 @@ import {
     ArticalList,
     ArticalEdit,
     Todos,
-    Counter
+    Counter,
+    Counter2
 } from '../views'
 
 export const mainRouter = [{
@@ -36,4 +37,7 @@ export const adminRouter = [{
 }, {
     pathname: '/admin/counter',
     component: Counter
+}, {
+    pathname: '/admin/counter2',
+    component: Counter2
 }]

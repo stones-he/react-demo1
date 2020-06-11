@@ -51,6 +51,11 @@ const Counter = Loadable({
     loading:Loading
 })
 
+const Counter2 = Loadable({
+    loader : () => import('./Counter2'),
+    loading:Loading
+})
+
 //
 // import Dashboard from './DashBoard'
 // import Login from './Login'
@@ -67,5 +72,6 @@ export {
     ArticalList,
     ArticalEdit,
     Todos,
-    Counter
+    Counter,
+    Counter2
 }
