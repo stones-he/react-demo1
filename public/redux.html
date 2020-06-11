@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <title>React App</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/redux/4.0.5/redux.min.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -74,10 +75,11 @@
       //
       //
       //
-      const store = createStore(changeState)
+      // const store = createStore(changeState)  // 自己实现的简易Redux
+      const store = Redux.createStore(changeState) // 开源Redux
       store.subscribe(renderCount)
       //
-      store.dispatch({})
+      // store.dispatch({})
     </script>
   </body>
 </html>
