@@ -60,6 +60,7 @@ const mapStateToProps = (state, ownProps) => {
         cardList: state.card,
     }
 }
+/////////--- 1
 // const mapDispatchToProps = (dispatch, ownProps) => {
 //     return {
 //         aincAmount: (id) => {
@@ -71,5 +72,8 @@ const mapStateToProps = (state, ownProps) => {
 //     }
 // }
 // export default connect(mapStateToProps, mapDispatchToProps)(CardList)
+//
+/////////    -- 2  /////////////
 // -- 通过直接把action creator传给connect会自动添加dispatch特性
+/////////
 export default connect(mapStateToProps,  { incAmount, decAmount })(CardList)

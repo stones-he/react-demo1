@@ -1,0 +1,7 @@
+1. 创建 reducers
+2. 合并reducer
+3. createStore
+4. Provider store={store}
+5. connect(mapStateToProps, {...actionCreators})(YourComponnent)
+6. actionCreators
+7. 修改reducers
