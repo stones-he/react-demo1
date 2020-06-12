@@ -17,6 +17,6 @@ npm i axios -S
 
 npm i redux -S
 
-npm i react-redux -S
+npm i react-redux -S 
 
 ```
