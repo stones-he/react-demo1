@@ -56,6 +56,10 @@ const Counter2 = Loadable({
     loading:Loading
 })
 
+const ReduxDemo = Loadable({
+    loader : () => import('./ReduxDemo'),
+    loading:Loading
+})
 //
 // import Dashboard from './DashBoard'
 // import Login from './Login'
@@ -73,5 +77,6 @@ export {
     ArticalEdit,
     Todos,
     Counter,
-    Counter2
+    Counter2,
+    ReduxDemo
 }

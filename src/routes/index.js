@@ -7,7 +7,8 @@ import {
     ArticalEdit,
     Todos,
     Counter,
-    Counter2
+    Counter2,
+    ReduxDemo
 } from '../views'
 
 export const mainRouter = [{
@@ -40,4 +41,7 @@ export const adminRouter = [{
 }, {
     pathname: '/admin/counter2',
     component: Counter2
+}, {
+    pathname: '/admin/reduxdemo',
+    component: ReduxDemo
 }]

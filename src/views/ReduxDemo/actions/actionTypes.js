@@ -1,0 +1,6 @@
+export default {
+    // CARD_LIST:"CARD_LIST",
+    // CARD_ADD: "CARD_ADD",
+    CARD_AMOUNT_INC:"CARD_AMOUNT_INC",
+    CARD_AMOUNT_DEC:"CARD_AMOUNT_DEC"
+}

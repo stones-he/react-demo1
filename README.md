@@ -14,4 +14,9 @@ npm i react-router-dom -S
 npm i react-loadable -S
 
 npm i axios -S
+
+npm i redux -S
+
+npm i react-redux -S
+
 ```
