@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CardItem from './CardItem'
 import { connect } from 'react-redux'
-import { incAmount, decAmount } from '../../actions/card'
+import { incAmount, decAmount, decAmountAsync, incAmountAsync } from '../../actions/card'
 
 
  class CardList extends Component {
@@ -40,6 +40,8 @@ import { incAmount, decAmount } from '../../actions/card'
                             <CardItem key={card.id}
                                 {...card} 
                                 aincAmount={()=>this.props.incAmount(card.id)}
+                                aincAmountAsync={()=>this.props.incAmountAsync(card.id)}
+                                adecAmountAsync={()=>this.props.decAmountAsync(card.id)}
                                 // adecAmount={()=>this.props.decAmount(card.id)}
                                 // -- 两种不同的使用方式
                                 adecAmount={this.props.decAmount}
@@ -76,4 +78,4 @@ const mapStateToProps = (state, ownProps) => {
 /////////    -- 2  /////////////
 // -- 通过直接把action creator传给connect会自动添加dispatch特性
 /////////
-export default connect(mapStateToProps,  { incAmount, decAmount })(CardList)
+export default connect(mapStateToProps,  { incAmount, decAmount, decAmountAsync,incAmountAsync })(CardList)

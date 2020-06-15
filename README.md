@@ -19,4 +19,6 @@ npm i redux -S
 
 npm i react-redux -S 
 
+#进行异步action
+npm i redux-thunk -S
 ```
