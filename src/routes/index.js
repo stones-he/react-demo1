@@ -8,7 +8,8 @@ import {
     Todos,
     Counter,
     Counter2,
-    ReduxDemo
+    ReduxDemo,
+    StandReduxDemo
 } from '../views'
 
 export const mainRouter = [{
@@ -44,4 +45,7 @@ export const adminRouter = [{
 }, {
     pathname: '/admin/reduxdemo',
     component: ReduxDemo
+}, {
+    pathname: '/admin/sreduxdemo',
+    component: StandReduxDemo
 }]

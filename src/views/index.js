@@ -60,6 +60,11 @@ const ReduxDemo = Loadable({
     loader : () => import('./ReduxDemo'),
     loading:Loading
 })
+
+const StandReduxDemo = Loadable({
+    loader : () => import('./StandReduxDemo'),
+    loading:Loading
+})
 //
 // import Dashboard from './DashBoard'
 // import Login from './Login'
@@ -78,5 +83,6 @@ export {
     Todos,
     Counter,
     Counter2,
-    ReduxDemo
+    ReduxDemo,
+    StandReduxDemo
 }
