@@ -14,38 +14,56 @@ import {
 
 export const mainRouter = [{
     pathname: '/login',
-    component: Login
+    component: Login,
+    title: 'Login'
 }, {
     pathname: '/404',
-    component: NotFound
+    component: NotFound,
+    title: '404'
 }]
 
 export const adminRouter = [{
     pathname: '/admin/dashboard',
-    component: Dashboard
+    component: Dashboard,
+    title: 'Dashboard',
+    isNav:true
 }, {
     pathname: '/admin/settings',
-    component: Settings
+    component: Settings,
+    title: 'Settings',
+    isNav:true
 }, {
     pathname: '/admin/artical',
     component: ArticalList,
-    exact: true
+    title: 'Artical',
+    exact: true,
+    isNav:true
 }, {
     pathname: '/admin/artical/edit/:id',
     component: ArticalEdit
 }, {
     pathname: '/admin/todo',
-    component: Todos
+    component: Todos,
+    title: 'Todos',
+    isNav:true
 }, {
     pathname: '/admin/counter',
-    component: Counter
+    component: Counter,
+    title: 'Counter',
+    isNav:true
 }, {
     pathname: '/admin/counter2',
-    component: Counter2
+    component: Counter2,
+    title: 'Counter-2',
+    isNav:true
 }, {
     pathname: '/admin/reduxdemo',
-    component: ReduxDemo
+    component: ReduxDemo,
+    title: 'Redux study Demo',
+    isNav:true
 }, {
     pathname: '/admin/sreduxdemo',
-    component: StandReduxDemo
+    component: StandReduxDemo,
+    title: 'Stand Redux Demo',
+    isNav:true
 }]

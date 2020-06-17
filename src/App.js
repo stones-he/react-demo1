@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {Route ,Switch, Redirect} from 'react-router-dom'
-// import { Button } from 'antd'
-
+import {Route ,Switch, Redirect, Link} from 'react-router-dom'
 import {adminRouter} from './routes'
 
 const testHOC = (WrappedComponent) =>  {
@@ -22,6 +20,17 @@ class App extends Component {
         return (
             <div>
                 <div>here is common area!</div>
+                <ul>
+                    <li><Link to="/login">登录</Link></li>
+                    <li><Link to="/admin/dashboard">Dashboard</Link></li>
+                    <li><Link to="/admin/settings">settings</Link></li>
+                    <li><Link to="/admin/artical">artical</Link></li>
+                    <li><Link to="/admin/todo">todo</Link></li>
+                    <li><Link to="/admin/counter">counter</Link></li>
+                    <li><Link to="/admin/counter2">counter2</Link></li>
+                    <li><Link to="/admin/reduxdemo">reduxdemo</Link></li>
+                    <li><Link to="/admin/sreduxdemo">sreduxdemo</Link></li>
+                </ul>
                 <Switch>
                     {
                         adminRouter.map(route =>{
