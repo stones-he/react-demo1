@@ -9,7 +9,8 @@ import {
     Counter,
     Counter2,
     ReduxDemo,
-    StandReduxDemo
+    StandReduxDemo,
+    FormDemo
 } from '../views'
 
 export const mainRouter = [{
@@ -65,5 +66,10 @@ export const adminRouter = [{
     pathname: '/admin/sreduxdemo',
     component: StandReduxDemo,
     title: 'Stand Redux Demo',
+    isNav:true
+}, {
+    pathname: '/admin/formDemo',
+    component: FormDemo,
+    title: 'Form Demo',
     isNav:true
 }]
